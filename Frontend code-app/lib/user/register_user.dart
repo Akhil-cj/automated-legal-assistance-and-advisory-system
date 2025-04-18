@@ -19,7 +19,7 @@ class _SimpleRegisterScreenState extends State<SimpleRegisterScreen> {
   final _confirmPasswordController = TextEditingController();
   bool _agreeToTerms = false;
 
-  final String baseUrl = 'http://192.168.220.247:8080'; // Updated server URL
+  final String baseUrl = 'http://localhost:5000'; // Updated server URL
 
   // Register function with API communication
   void registerUser() async {
