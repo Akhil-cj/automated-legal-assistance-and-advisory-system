@@ -39,7 +39,7 @@ class _UserComplaintsPageState extends State<UserComplaintsPage> {
     }
 
     final response = await http.get(
-      Uri.parse('http://192.168.220.247:8080/view_user_complaints'),
+      Uri.parse('http://localhost:5000/view_user_complaints'),
       headers: {
         "Content-Type": "application/json",
         "Username": loggedInUsername!,  // Correctly passing username in headers
