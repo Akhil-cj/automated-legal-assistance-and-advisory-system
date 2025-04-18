@@ -26,7 +26,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     });
 
     final response = await http.post(
-      Uri.parse('https://d73adc0f73e04665a67f267e513d03ec.serveo.net/verify_user'), // Updated URL
+      Uri.parse('http://localhost:5000/verify_user'), // Updated URL
       headers: {'Content-Type': 'application/json'},
       body: json.encode({'username': _usernameController.text}),
     );
@@ -60,7 +60,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     });
 
     final response = await http.post(
-      Uri.parse('http://192.168.220.247:8080/reset_password'), // Updated URL
+      Uri.parse('http://localhost:5000/reset_password'), // Updated URL
       headers: {'Content-Type': 'application/json'},
       body: json.encode({
         'username': _usernameController.text,
