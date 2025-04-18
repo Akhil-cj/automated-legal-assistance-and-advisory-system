@@ -29,7 +29,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
   });
 
   final response = await http.post(
-    Uri.parse('http://192.168.220.247:8080/login_user'),
+    Uri.parse('http://localhost:5000/login_user'),
     headers: {'Content-Type': 'application/json'},
     body: json.encode({
       'username': _emailController.text.trim(),
