@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     final response = await http.post(
-      Uri.parse('http://192.168.220.247:8080/api/admin/login'),
+      Uri.parse('http://localhost:5000/api/admin/login'),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({
         "email": emailController.text,
