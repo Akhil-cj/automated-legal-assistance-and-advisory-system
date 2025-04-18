@@ -22,7 +22,7 @@ class _AuthorityManagementPageState extends State<AuthorityManagementPage> {
 
   // Fetch authorities from the backend
   Future<void> fetchAuthorities() async {
-    final response = await http.get(Uri.parse('http://192.168.220.247:8080/get_authorities'));
+    final response = await http.get(Uri.parse('http://localhost:5000/get_authorities'));
 
     if (response.statusCode == 200) {
       setState(() {
