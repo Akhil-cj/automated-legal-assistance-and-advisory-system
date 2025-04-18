@@ -54,7 +54,7 @@ class _RegisterComplaintState extends State<RegisterComplaint> {
     };
 
     final response = await http.post(
-      Uri.parse('http://192.168.220.247:8080/register_complaint'),
+      Uri.parse('http://localhost:5000/register_complaint'),
       headers: {
         "Content-Type": "application/json",
         "Username": loggedInUsername!,  // Send username in headers
