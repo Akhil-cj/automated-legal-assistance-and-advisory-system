@@ -13,7 +13,7 @@ class _AIChatAssistantPageState extends State<AIChatAssistantUserPage> {
   final TextEditingController _controller = TextEditingController();
   final ScrollController _scrollController = ScrollController();
   final List<Map<String, dynamic>> _messages = [];
-  final String backendUrl = 'https://d73adc0f73e04665a67f267e513d03ec.serveo.net/ask'; // Your backend URL
+  final String backendUrl = 'http://localhost:5000/ask'; // Your backend URL
 
   bool _isLoading = false;
 
