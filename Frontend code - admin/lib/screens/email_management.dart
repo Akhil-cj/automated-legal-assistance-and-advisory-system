@@ -18,7 +18,7 @@ class _EmailListPageState extends State<EmailListPage> {
       statusMessage = 'Loading emails...';
     });
     try {
-      final response = await http.get(Uri.parse('http://192.168.220.247:8080/emails'));
+      final response = await http.get(Uri.parse('http://localhost:5000/emails'));
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         setState(() {
@@ -40,7 +40,7 @@ class _EmailListPageState extends State<EmailListPage> {
       statusMessage = 'Reloading emails...';
     });
     try {
-      final response = await http.get(Uri.parse('http://192.168.220.247:8080/reload'));
+      final response = await http.get(Uri.parse('http://localhost:5000/reload'));
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         setState(() {
@@ -57,7 +57,7 @@ class _EmailListPageState extends State<EmailListPage> {
   }
 
   Future<String> fetchSummary(String section) async {
-    final response = await http.get(Uri.parse('http://192.168.220.247:8080/get_summary?section=$section'));
+    final response = await http.get(Uri.parse('http://localhost:5000/get_summary?section=$section'));
     if (response.statusCode == 200) {
       return json.decode(response.body)['summary'];
     }
@@ -142,7 +142,7 @@ class _EmailCardState extends State<EmailCard> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://192.168.220.247:8080/update_status/$emailId'),
+        Uri.parse('http://localhost:5000/update_status/$emailId'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({"status": status, "authority": selectedAuthority}),
       );
