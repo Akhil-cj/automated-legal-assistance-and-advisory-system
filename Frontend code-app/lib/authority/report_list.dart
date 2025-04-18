@@ -87,7 +87,7 @@ class _ComplaintFormPageState extends State<ComplaintFormPage> {
     final isoDateTime = _currentTime.toIso8601String();
 
     final response = await http.post(
-      Uri.parse('https://d73adc0f73e04665a67f267e513d03ec.serveo.net/complaints'),
+      Uri.parse('http://localhost:5000/complaints'),
       headers: {'Content-Type': 'application/json'},
       body: json.encode({
         'title': _titleController.text,
@@ -158,7 +158,7 @@ class ComplaintDetailsPage extends StatelessWidget {
 
   Future<Map<String, dynamic>> fetchComplaintDetails() async {
     final response = await http
-        .get(Uri.parse('https://d73adc0f73e04665a67f267e513d03ec.serveo.net/complaints/$complaintId'));
+        .get(Uri.parse('http://localhost:5000/complaints/$complaintId'));
     if (response.statusCode == 200) {
       return json.decode(response.body);
     } else {
@@ -228,7 +228,7 @@ class _ReportListPageState extends State<ReportListPage> {
 
   Future<void> fetchComplaints() async {
     final response =
-        await http.get(Uri.parse('http://192.168.220.247:8080/complaints'));
+        await http.get(Uri.parse('http://localhost:5000/complaints'));
     if (response.statusCode == 200) {
       setState(() {
         complaints = json.decode(response.body);
