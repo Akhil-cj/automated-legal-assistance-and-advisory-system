@@ -58,12 +58,6 @@ The system integrates Natural Language Processing (NLP), email automation, a vir
 
 ---
 
-## 📂 Files Included
-- `app.py` — Full Flask backend source code.
-- `FINAL_REPORT_LEGAL.pdf` — Complete project report with system design, DFDs, architecture diagrams, screenshots, and results.
-
----
-
 ## 🚀 How to Run
 1. Clone the repository.
 2. Install dependencies:
