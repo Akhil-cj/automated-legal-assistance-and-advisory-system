@@ -24,7 +24,7 @@ Future<void> login() async {
   }
 
   final response = await http.post(
-    Uri.parse('http://192.168.220.247:8080/login_authority'),
+    Uri.parse('http://localhost:5000/login_authority'),
     headers: {'Content-Type': 'application/json'},
     body: jsonEncode({'name': name, 'password': password}),
   );
