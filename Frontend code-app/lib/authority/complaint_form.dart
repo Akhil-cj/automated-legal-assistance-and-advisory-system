@@ -27,7 +27,7 @@ class _AuthorityComplaintsPageState extends State<AuthorityComplaintsPage> {
   }
 
   final response = await http.get(
-    Uri.parse('http://192.168.220.247:8080/view_authority_complaints'),
+    Uri.parse('http://localhost:5000/view_authority_complaints'),
     headers: {
       'Content-Type': 'application/json',
       'Authority-Name': authorityName,
@@ -60,7 +60,7 @@ class _AuthorityComplaintsPageState extends State<AuthorityComplaintsPage> {
 
   Future<void> updateStatus(String newStatus, String authorityName, int complaintId) async {
     final response = await http.put(
-      Uri.parse('http://192.168.220.247:8080/update_authority_complaint_status'),
+      Uri.parse('http://localhost:5000/update_authority_complaint_status'),
       headers: {'Content-Type': 'application/json'},
       body: json.encode({
         'status': newStatus,
